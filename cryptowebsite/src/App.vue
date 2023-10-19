@@ -1,8 +1,8 @@
 <template>
   <div>
-  <Header />
-  <router-view/>
-  <Footer />
+    <Header />
+    <router-view/>
+    <Footer />
   </div>
 </template>
 
@@ -25,6 +25,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+h1{
+  font-size: 78px;
 }
 
 </style>

@@ -1,10 +1,8 @@
 <template>
-    <div class="content_banner_2" >
-        <div class="test">
+    <div class="content_banner_3" >
             <h1>{{title}}</h1>
             <h3>{{textContent}}</h3>
             <Button :title="buttonTitle" />
-        </div>
     </div>
   </template>
   
@@ -12,7 +10,7 @@
   import Button from '../components/BaseButton.vue';
 
   export default {
-    name: "content_banner_2",
+    name: "content_banner_3",
     props: {
       title: String,
       textContent: String,
@@ -27,21 +25,16 @@
   
   <style scoped>
   /* Add your component-specific styles here */
-  .content_banner_2{
-    height: 500px;
-    background: url('../assets/bannerPic.png');
-    margin-right: 10rem;
-    margin-left: 10rem;
+  .content_banner_3{
+    background-image: url('../assets/bannerPic2.jpg');
     background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y:top;
+    background-position: center;
+    height: 500px;
+    background-size: cover; /* Ensure the background image covers the entire container */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end; /* Align content to the left */
-}
-.test{
-    text-align: right;
+    align-items: center;
 }
   </style>
   
