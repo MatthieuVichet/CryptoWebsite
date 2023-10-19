@@ -16,7 +16,7 @@ export default {
   components: {
     Banner,
     Banner2,
-    Banner3
+    Banner3,
   },
 };
 </script>
