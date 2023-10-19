@@ -1,17 +1,18 @@
 <template>
     <header>
-        <nav>
-        <h2>{{ pageTitle }}</h2>
+      <a href="/"><img alt='Logo' src='../assets/logo.png'/></a>
+      <nav>
         <ul>
-            <router-link to="/">Home</router-link> |
-            <router-link to="/monetization">Monetization</router-link> |
-            <router-link to="/latestNews">Latest News</router-link> |
-            <router-link to="/guide">Beginner's guide</router-link> |
-            <router-link to="/analysis">Analysis and trends</router-link> |
-            <router-link to="/resources">Resources</router-link> |
-            <router-link to="/contact">Contact</router-link>
+          <router-link to="/">Home</router-link> |
+          <router-link to="/monetization">Monetization</router-link> |
+          <router-link to="/latestNews">Latest News</router-link> |
+          <router-link to="/guide">Beginner's guide</router-link> |
+          <router-link to="/analysis">Analysis and trends</router-link> |
+          <router-link to="/resources">Resources</router-link> |
+          <router-link to="/contact">Contact</router-link>
         </ul>
-        </nav>  
+      </nav>  
+      <a>Se connecter</a> 
     </header>
 </template>
 
@@ -29,18 +30,21 @@ export default {
 <style scoped>
   /* Add your component-specific styles here */
   header {
-    background-color: #333;
-    color: white;
+    background-color: #ffffff;
+    color: #000000;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
     nav a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #000000;
     }
 
     nav a.router-link-exact-active {
-    color: #42b983;
+    color: #E11FEA;
     }
 
   h2 {
@@ -51,6 +55,7 @@ export default {
     list-style: none;
     padding: 0;
     display: flex;
+    gap: 1rem;
   }
 
   li {
@@ -58,7 +63,8 @@ export default {
   }
 
   a {
+    font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: #E11FEA;
   }
 </style>
