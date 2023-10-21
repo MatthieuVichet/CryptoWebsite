@@ -32,7 +32,6 @@ export default {
   },
   computed: {
     articlesInRows() {
-      // Divisez les articles en groupes de 4 pour chaque ligne
       return this.articles.reduce((rows, article, index) => {
         const rowIndex = Math.floor(index / 4);
         if (!rows[rowIndex]) {

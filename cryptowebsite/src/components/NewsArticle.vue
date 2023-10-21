@@ -31,20 +31,20 @@ export default {
 <style scoped>
 .news-item {
   display: flex;
-  flex-direction: column; /* Affiche les éléments en colonne */
+  flex-direction: column;
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
   margin-right: 10px;
-  max-height: 400px; /* Ajuste la hauteur maximale selon vos besoins */
-  width: 300px; /* Ajuste la largeur selon vos besoins */
+  max-height: 400px;
+  width: 300px;
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .news-image {
   width: 100%;
   height: auto;
-  max-height: 200px; /* Ajuste la hauteur maximale de l'image selon vos besoins */
+  max-height: 200px;
   object-fit: cover;
 }
 
