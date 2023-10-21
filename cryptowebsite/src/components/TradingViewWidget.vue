@@ -22,6 +22,8 @@
         return {
           symbol: this.symbol || 'BINANCE:BTCUSDT', // Use the prop or a default value
           theme: 'dark',
+          upColor: 'black', // Set the color for bullish candlesticks (green)
+          downColor: '1299F7',
         };
       }, 
     },

@@ -3,6 +3,8 @@
     <Banner title="Test banner" textContent="This is the first banner, let's test it" buttonTitle="Yoyo" />
     <Banner2 title="Test banner" textContent="This is the second banner, let's test it" buttonTitle="Yoyo" />
     <Banner3 title="Test banner" textContent="This is the second banner, let's test it" buttonTitle="Yoyo" />
+    <img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />    
+
   </div>
 </template>
 
