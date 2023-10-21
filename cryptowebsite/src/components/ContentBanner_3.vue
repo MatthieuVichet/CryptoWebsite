@@ -16,6 +16,7 @@
       textContent: String,
       buttonTitle: String, 
       style: Object,
+      url: String
     },
     components: {
     Button, 
