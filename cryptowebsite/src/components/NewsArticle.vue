@@ -1,50 +1,65 @@
 <template>
-  <div class="news-carousel">
-    <h1>Dernières Nouvelles sur les Cryptomonnaies</h1>
-    <div class="carousel-container">
-      <news-article
-        v-for="article in articles.slice(0, 3)"
-        :key="article.title"
-        :article="article"
-      />
+  <div class="news-item">
+    <img
+      :src="article.urlToImage"
+      alt="Image illustrative"
+      class="news-image"
+    />
+    <div class="news-details">
+      <h2>
+        <a :href="article.url" target="_blank" class="article-link">{{
+          article.title
+        }}</a>
+      </h2>
+      <p>{{ article.description }}</p>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
-import NewsArticle from "@/components/NewsArticle.vue";
-
 export default {
-  components: {
-    NewsArticle,
-  },
-  data() {
-    return {
-      articles: [],
-    };
-  },
-  mounted() {
-    this.fetchCryptoNews();
-  },
-  methods: {
-    async fetchCryptoNews() {
-      try {
-        const response = await axios.get(
-          "https://newsapi.org/v2/everything?q=crypto&apiKey=a665c9ec2c0c410a8fe53ae103b7cb6f"
-        );
-        this.articles = response.data.articles;
-      } catch (error) {
-        console.error("Erreur lors de la récupération des actualités :", error);
-      }
+  props: {
+    article: {
+      type: Object,
+      required: true,
+      default: () => ({}),
     },
   },
 };
 </script>
 
 <style scoped>
-.carousel-container {
+.news-item {
   display: flex;
-  overflow-x: auto;
+  flex-direction: column; /* Affiche les éléments en colonne */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 10px;
+  max-height: 400px; /* Ajuste la hauteur maximale selon vos besoins */
+  width: 300px; /* Ajuste la largeur selon vos besoins */
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.news-image {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Ajuste la hauteur maximale de l'image selon vos besoins */
+  object-fit: cover;
+}
+
+.news-details {
+  flex: 1;
+  padding: 10px;
+}
+
+.article-link {
+  color: #e11fea;
+  text-decoration: none;
+}
+
+.news-item:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 </style>
