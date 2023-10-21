@@ -33,11 +33,11 @@ export default {
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 1rem;
   overflow: hidden;
   margin-right: 10px;
   max-height: 400px;
-  width: 300px;
+  width: 400px ;
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 

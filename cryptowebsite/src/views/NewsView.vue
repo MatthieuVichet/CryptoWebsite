@@ -64,6 +64,8 @@ export default {
 .carousel-container {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .row {
