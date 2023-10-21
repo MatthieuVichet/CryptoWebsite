@@ -2,17 +2,11 @@
   <div class="news-carousel">
     <h1>Dernières Nouvelles sur les Cryptomonnaies</h1>
     <div class="carousel-container">
-      <div
-        class="row"
-        v-for="(rowArticles, index) in articlesInRows"
-        :key="index"
-      >
-        <news-article
-          v-for="article in rowArticles"
-          :key="article.title"
-          :article="article"
-        />
-      </div>
+      <news-article
+        v-for="article in articles.slice(0, 3)"
+        :key="article.title"
+        :article="article"
+      />
     </div>
   </div>
 </template>
@@ -29,19 +23,6 @@ export default {
     return {
       articles: [],
     };
-  },
-  computed: {
-    articlesInRows() {
-      // Divisez les articles en groupes de 4 pour chaque ligne
-      return this.articles.reduce((rows, article, index) => {
-        const rowIndex = Math.floor(index / 4);
-        if (!rows[rowIndex]) {
-          rows[rowIndex] = [];
-        }
-        rows[rowIndex].push(article);
-        return rows;
-      }, []);
-    },
   },
   mounted() {
     this.fetchCryptoNews();
@@ -64,13 +45,6 @@ export default {
 <style scoped>
 .carousel-container {
   display: flex;
-  flex-wrap: wrap;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 20px;
+  overflow-x: auto;
 }
 </style>
