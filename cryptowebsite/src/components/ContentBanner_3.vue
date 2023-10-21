@@ -14,7 +14,7 @@
     props: {
       title: String,
       textContent: String,
-      buttonTitle: String,
+      buttonTitle: String, 
       style: Object,
     },
     components: {
