@@ -8,23 +8,23 @@
   import VueTradingView from 'vue-trading-view/src/vue-trading-view';
   
   export default {
-    name: 'ChartWidget',
+    name: 'HelloWorld',
     props: {
       msg: String,
-      symbol: String, // Define a symbol prop
+      symbol: String, // Define a 'symbol' prop
     },
     components: {
       VueTradingView,
     },
     computed: {
       chartOptions() {
-        // Create and return the chart options object with the provided symbol
+        // Create the chart options object with the symbol and theme
         return {
-          symbol: this.symbol,
+          symbol: this.symbol || 'BINANCE:BTCUSDT', // Use the prop or a default value
           theme: 'dark',
         };
-      },
+      }, 
     },
-  };
+  }; 
   </script>
   

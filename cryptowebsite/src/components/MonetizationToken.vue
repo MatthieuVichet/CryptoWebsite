@@ -32,6 +32,7 @@ export default {
     this.fetchTokenData(this.tokenSymbol); // Use the prop as the symbol
   },
   methods: {
+    
     fetchTokenData(symbol) {
       // Binance API endpoint for token data
       const url = `https://api.binance.com/api/v3/ticker/24hr?symbol=${symbol}`;
