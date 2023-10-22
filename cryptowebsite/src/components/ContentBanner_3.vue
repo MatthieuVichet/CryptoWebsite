@@ -30,7 +30,8 @@
     background-image: url('../assets/bannerPic2.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    height: 500px;
+    height: 800px;
+    width: 100%;
     background-size: cover; /* Ensure the background image covers the entire container */
     display: flex;
     flex-direction: column;

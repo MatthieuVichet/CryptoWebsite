@@ -64,7 +64,8 @@
     font-weight: bold;
     border-radius: 1rem;
     transition: all 0.3s ease-in-out;
-
+    width:fit-content;
+    height: auto;
   }
   </style>
   

@@ -45,6 +45,8 @@ ul {
 nav a {
   font-weight: bold;
   color: #000000;
+  text-decoration: none;
+
   }
 
   nav a.router-link-exact-active {
