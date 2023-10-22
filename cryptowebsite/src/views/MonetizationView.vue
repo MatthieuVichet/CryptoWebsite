@@ -6,10 +6,14 @@
     </div>
     <div class="tokenContentDisplay">
       <div class="tokenDetailDisplay">
-        <h1>{{ selectedTokenName }}</h1>
-        <h2>Price : {{ parseFloat(selectedTokenPrice).toFixed(2) }}$</h2>
-        <h2>Volume : {{ parseFloat(selectedTokenVolume * selectedTokenPrice).toFixed(2) }}$ exchanged</h2>
-        <h2>Change : {{ parseFloat(selectedTokenChange).toFixed(2) }}%</h2>
+        <div>
+          <h1>{{ selectedTokenName }}</h1>
+          <h2>Price : {{ parseFloat(selectedTokenPrice).toFixed(2) }}$</h2>
+          <h2>Volume : {{ parseFloat(selectedTokenVolume * selectedTokenPrice).toFixed(2) }}$ exchanged</h2>
+          <h2>Change : {{ parseFloat(selectedTokenChange).toFixed(2) }}%</h2>
+        </div>
+        
+        <a href="/analysis">🔗See more about general market analysis</a>
 
       </div>
       <Chart :symbol="selectedSymbol" :key="selectedSymbol" /> <!-- Use a dynamic key binding -->
@@ -119,5 +123,15 @@ export default {
   margin-left: 10rem;
   padding-left: 5rem;
   border-radius: 5rem;
+}
+
+.tokenDetailDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+a{
+  color: #E11FEA
 }
 </style>
