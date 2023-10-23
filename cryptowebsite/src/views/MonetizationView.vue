@@ -33,7 +33,7 @@
 
 <script>
 import TokenData from '@/components/MonetizationToken.vue';
-import Chart from '@/components/TradingViewWidget.vue';
+import Chart from '@/components/TradingViewWidget.vue'; 
 import Banner from '@/components/ContentBanner_1.vue';
 import axios from 'axios';
 
