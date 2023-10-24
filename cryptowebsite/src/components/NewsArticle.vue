@@ -37,7 +37,7 @@ export default {
   overflow: hidden;
   margin-right: 10px;
   max-height: 400px;
-  width: 400px ;
+  width: 400px;
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
@@ -54,12 +54,12 @@ export default {
 }
 
 .article-link {
-  color: #e11fea;
+  color: rgba(225, 31, 234, 0.7);
   text-decoration: none;
 }
 
 .news-item:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px #1299f7;
   transform: translateY(-5px);
 }
 </style>
