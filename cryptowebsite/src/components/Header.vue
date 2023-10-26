@@ -12,23 +12,35 @@
           <router-link to="/contact">Contact</router-link>
         </ul>
       </nav>  
-      <a>Se connecter</a> 
+      <SigninButton @user-signed-in="handleUserSignedIn" />
     </header>
 </template>
 
 <script>
+import SigninButton from '@/components/SigninButton.vue';
+
 export default {
   name: "base-header",
   data() {
     return {
       pageTitle: "My Simple Header",
+      nomUser: null, 
     };
+  },
+  methods: {
+    handleUserSignedIn(userName) {
+      this.nomUser = userName; 
+    },
+  },
+  components: {
+    SigninButton,
   },
 };
 </script>
 
+
 <style scoped>
-  /* Add your component-specific styles here */
+
   header {
     background-color: #ffffff;
     color: #000000;
@@ -37,6 +49,7 @@ export default {
     justify-content: space-between;
     align-items: center;
   }
+
 
     nav a {
     font-weight: bold;

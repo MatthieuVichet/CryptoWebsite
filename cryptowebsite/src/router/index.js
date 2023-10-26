@@ -6,6 +6,7 @@ import GuideView from '../views/GuideView.vue'
 import AnalysisView from '../views/AnalysisView.vue'
 import ResourcesView from '../views/ResourcesView.vue'
 import ContactView from '../views/ContactView.vue'
+import ConnexionView from '../views/ConnexionView.vue'
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: ContactView
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: ConnexionView
   }
 ]
 
