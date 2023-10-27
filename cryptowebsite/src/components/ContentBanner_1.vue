@@ -35,6 +35,8 @@
     width: 100%;
     margin-right: 10rem;
     margin-left: 10rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
