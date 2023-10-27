@@ -3,7 +3,7 @@
         <div class="contentText">
             <h1>{{title}}</h1>
             <h3>{{textContent}}</h3>
-            <Button :title="buttonTitle" />
+            <Button :to="to" :title="buttonTitle" />
         </div>
         <img :src="require(`@/assets/${imgURL}`)" />
     </div>
@@ -20,6 +20,7 @@
       buttonTitle: String,
       style: Object,
       imgURL: String,
+      to: String,
     },
     components: {
     Button, 
@@ -35,7 +36,7 @@
     margin-right: 10rem;
     margin-left: 10rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 .contentText{
@@ -43,6 +44,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: left;
+  width: 50%;
 }
   </style>
   

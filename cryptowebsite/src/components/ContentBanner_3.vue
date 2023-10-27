@@ -2,7 +2,7 @@
     <div class="content_banner_3" >
             <h1>{{title}}</h1>
             <h3>{{textContent}}</h3>
-            <Button :title="buttonTitle" />
+            <Button :to="to" :title="buttonTitle" />
     </div>
   </template>
   
@@ -16,7 +16,8 @@
       textContent: String,
       buttonTitle: String, 
       style: Object,
-      url: String
+      url: String,
+      to: String
     },
     components: {
     Button, 

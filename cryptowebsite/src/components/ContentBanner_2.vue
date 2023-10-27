@@ -5,7 +5,7 @@
       <div class="contentText">
           <h1>{{title}}</h1>
           <h3>{{textContent}}</h3>
-          <Button :title="buttonTitle" />
+          <Button :to="to" :title="buttonTitle" />
       </div>
   </div>
 </template>
@@ -21,6 +21,7 @@ export default {
     buttonTitle: String,
     style: Object,
     imgURL: String,
+    to: String
   },
   components: {
   Button, 
@@ -36,7 +37,7 @@ export default {
   margin-right: 10rem;
   margin-left: 10rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 .contentText{
@@ -44,5 +45,8 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: end; 
+text-align: end;
+width: 50%;
+
 }
 </style>
