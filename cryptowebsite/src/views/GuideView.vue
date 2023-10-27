@@ -40,13 +40,11 @@ export default {
   components: {
     CategoryBeginner,
   },
-  // Autres propriétés et méthodes
 };
 </script>
 
 <style scoped>
-/* Ajoutez vos styles ici */
 .guide-view {
-  /* Style pour le conteneur de la vue complète du guide */
+  /* */
 }
 </style>

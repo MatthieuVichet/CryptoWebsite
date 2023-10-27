@@ -73,10 +73,14 @@ export default {
 
 <style scoped>
 .category-beginner {
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /*transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;*/
   border-radius: 15px;
   margin-bottom: 10px;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .category-beginner:hover {
