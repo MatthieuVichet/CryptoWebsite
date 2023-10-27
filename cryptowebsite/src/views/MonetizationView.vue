@@ -27,7 +27,7 @@
       </div>
       <TokenData class="token-data" v-for="symbol in tokenSymbols" :key="symbol" :tokenSymbol="symbol" @click="handleTokenDataClick(symbol)" />
     </div>
-    <Banner title="Test banner" textContent="See more about general market data" buttonTitle="Yoyo" imgURL="bannerPic.png"/>
+    <Banner title="Learn more about crypto" textContent="Dive into beginner-to-expert courses to increase your knowledge" to="/guide" buttonTitle="See courses" imgURL="bannerPic.png"/>
   </div>
 </template>
 
