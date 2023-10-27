@@ -58,7 +58,7 @@ export default {
 <style scoped>
 /* Vos styles existants pour le bouton */
 .signIn-design {
-    background-color: #3498db;
+    background-color: rgba(18,153,247,0.5);
     color: #fff;
     padding: 10px 20px;
     border: none;
