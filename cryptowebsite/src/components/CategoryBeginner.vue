@@ -58,12 +58,14 @@ export default {
     },
     getYouTubeEmbedUrl(url) {
       const videoId = this.getYouTubeVideoId(url);
-      return `https://www.youtube.com/embed/${videoId}`;
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : "";
     },
     getYouTubeVideoId(url) {
-      // Logique pour extraire l'ID de la vidéo depuis l'URL YouTube
-      // Exemple simple : retourne tout ce qui suit le dernier "=" dans l'URL
-      return url.split("=").pop();
+      const match = url.match(
+        /(?:youtu\.be\/|youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/
+      );
+
+      return match ? match[1] : null;
     },
   },
 };
@@ -73,14 +75,16 @@ export default {
 .category-beginner {
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border-radius: 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .category-beginner:hover {
   background-color: rgba(225, 31, 234, 0.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transform: translateY(-5px);
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-bottom: 6px;
+  margin-top: 6px;
 }
 
 .category-header {
@@ -92,6 +96,7 @@ export default {
   height: 200px;
   width: 320px;
   border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .category-info {
