@@ -1,7 +1,9 @@
 <template>
+  <div class="widget-class">
     <div class="chartWidget">
       <VueTradingView :options="chartOptions" />
     </div>
+  </div>
   </template>
   
   <script>
@@ -29,4 +31,12 @@
     },
   }; 
   </script>
-  
+
+  <style scoped>
+  .widget-class{
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.321);
+
+  }
+
+</style>

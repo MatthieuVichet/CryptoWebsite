@@ -17,7 +17,6 @@
       </div>
     </div>
     <Banner3 title="Real time market analysis" textContent="Keep yourself updating with our general market features" to="/analysis" buttonTitle="Market analysis" />
-    <img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />    
 
   </div>
 </template>

@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 /* Add your component-specific styles here */
-.content_banner_2{
+.content_banner_2 {
   height: 500px;
   width: 100%;
   margin-right: 10rem;
@@ -40,13 +40,14 @@ export default {
   justify-content: space-around;
   align-items: center;
 }
-.contentText{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: end; 
-text-align: end;
-width: 50%;
 
+.contentText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  align-items: flex-end;
+  text-align: right; 
+  width: 50%;
 }
 </style>
+
