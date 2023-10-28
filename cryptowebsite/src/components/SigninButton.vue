@@ -1,11 +1,12 @@
 <template>
   <div class="sign-in-button" @mouseleave="closeMenu" @mouseover="openMenu">
-    <button title="Sign In" class="signIn-design" @click="redirectToLogin">
+    <button title="Sign In" class="signIn-design">
       {{ nomUser || 'Sign In' }}
     </button>
     <transition name="fade" mode="out-in">
-      <div class="dropdown-menu" ref="menu" :class="{ active: isMenuOpen && nomUser }">
-        <router-link to="/login" class="menu-link">Your Content</router-link>
+      <div class="dropdown-menu" ref="menu" :class="{ active: isMenuOpen }">
+        <router-link to="/" class="menu-link" @click="redirectToLoginMicrosoft">Microsoft</router-link>
+        <a href="#" class="menu-link" @click="handleGoogleLogin">Google</a>
         <router-link to="/" class="menu-link">Log out</router-link>
       </div>
     </transition>
@@ -13,16 +14,15 @@
 </template>
 
 <script>
-import { provide, ref } from 'vue';
+import { ref, provide } from 'vue';
 import { signInAndGetUser } from '../lib/microsoftGraph.js';
-import { useRouter } from 'vue-router'; // Importez useRouter depuis vue-router
+import { googleAuthCodeLogin } from 'vue3-google-login';
 
 export default {
   name: "SigninButton",
   setup() {
     const nomUser = ref(null);
     const isMenuOpen = ref(false);
-    const router = useRouter(); // Utilisez useRouter pour accéder au routeur
 
     const openMenu = () => {
       isMenuOpen.value = true;
@@ -32,12 +32,22 @@ export default {
       isMenuOpen.value = false;
     };
 
-    const redirectToLogin = async () => {
+    const redirectToLoginMicrosoft = async () => {
       const user = await signInAndGetUser();
       console.log('User signed in:', user);
       nomUser.value = user;
       provide('user-signed-in', user.name);
-      router.push({ name: 'login' }); // Utilisez le routeur pour effectuer la redirection
+    };
+
+    const handleGoogleLogin = () => {
+      googleAuthCodeLogin().then((response) => {
+        console.log('Réponse de la connexion Google :', response);
+
+        if (response && response.profile) {
+          // Mettez à jour nomUser avec le nom de l'utilisateur
+          nomUser.value = response.profile.name;
+        }
+      });
     };
 
     return {
@@ -45,13 +55,17 @@ export default {
       isMenuOpen,
       openMenu,
       closeMenu,
-      redirectToLogin,
+      redirectToLoginMicrosoft,
+      handleGoogleLogin,
     };
   },
 };
-
-
 </script>
+
+
+
+
+
 
 
 
