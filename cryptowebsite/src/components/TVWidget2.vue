@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="tradingview-widget-container">
       <div class="tradingview-widget-container__widget"></div>
       <div class="tradingview-widget-copyright">
@@ -73,3 +73,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.container{
+  margin-bottom : 60px;
+}
+</style>

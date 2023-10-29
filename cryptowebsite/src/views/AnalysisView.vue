@@ -59,11 +59,14 @@ export default {
   height: 60vh;
 }
 
+.title-container{
+  margin-bottom: 50px 0;
+}
 .widget-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 50px 0;
 }
 
 .tv-widget {
