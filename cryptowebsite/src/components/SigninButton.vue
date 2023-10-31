@@ -6,17 +6,17 @@
     <transition name="fade" mode="out-in">
       <div class="dropdown-menu" ref="menu" :class="{ active: isMenuOpen }">
         <router-link to="/" class="menu-link" @click="redirectToLoginMicrosoft">Microsoft</router-link>
-        <a href="#" class="menu-link" @click="handleGoogleLogin">Google</a>
-        <router-link to="/" class="menu-link">Log out</router-link>
+        <router-link to="/" class="menu-link" @click="handleGoogleLogin">Google</router-link>
+        <router-link to="/" class="menu-link" @click="handleLogout">Log out</router-link>
       </div>
     </transition>
   </div>
 </template>
 
-<script>
-import { ref, provide } from 'vue';
-import { signInAndGetUser } from '../lib/microsoftGraph.js';
+<script>import { ref, provide } from 'vue';
+import { signInAndGetUser, msalInstance } from '../lib/microsoftGraph.js'; 
 import { googleAuthCodeLogin } from 'vue3-google-login';
+import router from '@/router';
 
 export default {
   name: "SigninButton",
@@ -44,10 +44,15 @@ export default {
         console.log('Réponse de la connexion Google :', response);
 
         if (response && response.profile) {
-          // Mettez à jour nomUser avec le nom de l'utilisateur
           nomUser.value = response.profile.name;
         }
       });
+    };
+
+    const handleLogout = () => {
+      nomUser.value = null;
+      msalInstance.logoutPopup();
+      router.push({ name: 'home' });
     };
 
     return {
@@ -57,20 +62,16 @@ export default {
       closeMenu,
       redirectToLoginMicrosoft,
       handleGoogleLogin,
+      handleLogout,
     };
   },
 };
+
 </script>
 
 
-
-
-
-
-
-
 <style scoped>
-/* Vos styles existants pour le bouton */
+
 .signIn-design {
     background-color: rgba(18,153,247,0.5);
     color: #fff;
@@ -80,8 +81,8 @@ export default {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    white-space: nowrap; /* Évite que le texte se divise sur plusieurs lignes */
-    text-align: left; /* Aligne le texte à gauche */
+    white-space: nowrap; 
+    text-align: left; 
 }
 
 
@@ -91,9 +92,9 @@ export default {
   top: 100%;
   display: none;
   border-radius: 5px;
-  height: 0; /* Initial height of 0 */
-  overflow: hidden; /* Hide overflow content */
-  transition: height 0.3s ease; /* Adjust the duration as needed */
+  height: 0; 
+  overflow: hidden; 
+  transition: height 0.3s ease; 
 }
 
 
@@ -113,7 +114,7 @@ export default {
   opacity: 0;
 }
 
-/* Style des liens du menu */
+
 .menu-link {
   display: block;
   border: 1px solid #ccc;
@@ -128,7 +129,7 @@ export default {
 
 .active {
   display: block;
-  height: auto; /* Set the height to 'auto' to expand the menu */
+  height: auto;
 }
 
 .menu-link:hover {

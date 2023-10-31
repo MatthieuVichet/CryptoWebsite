@@ -18,7 +18,7 @@ const msalInstance = new msal.PublicClientApplication({
 })
 
 msalInstance.initialize()
-
+export { msalInstance };
 export async function signInAndGetUser() {
   const authResult = await msalInstance.loginPopup(requestedScopes)
   msalInstance.setActiveAccount(authResult.account)
